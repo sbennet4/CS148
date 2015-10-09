@@ -5,10 +5,10 @@ require_once('lib/custom-functions.php');
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Assignmnet 2</title>
+        <title>Friday Assignment 1</title>
         <meta charset="utf-8">
         <meta name="Skomer Bennett-Clemmow" content="top page">
-        <meta name="description" content="Friday Assignment">
+        <meta name="description" content="Friday Assignment 1">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,6 +39,10 @@ require_once('lib/custom-functions.php');
             tr:nth-child(odd){
                 background-color: whitesmoke;
             }
+            td:hover {
+               background: #09C;
+               color: white;
+}
         </style>
 
         <?php

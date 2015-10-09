@@ -16,18 +16,25 @@ $columns=8;
 
 //selects all columns from the students, sorted by last name then first name
 $query = 'SELECT * from tblStudents'
-        . ' ORDER BY fldLastName, fldFirstName LIMIT 10 OFFSET 1000';
+        . ' ORDER BY fldLastName, fldFirstName LIMIT ?,?';
 //select * from tblStudents order by fldLastName, fldFirstName limit 10 offset 1000;
 
 echo $query; 
 print "<br>";
 
 
-    $results = $thisDatabaseReader->select($query, "", 1, 0, 0, 0, false, false);
+    $results = $thisDatabaseReader->select($query, "", 0, 1, 0, 0, false, false);
  echo count ($results);
+   
     
-    print "<table>";
+          print "<table>";
+          
+      print "<tr><th>pmkStudentId</th><th>Last Name</th><th>First Name</th><th>Address</th><th>City</th><th>State</th><th>Zip</th><th>Gender</th></tr>";
+    
+
+       
  foreach ($results as $row) {
+    
      print "<tr>";
      for ($i = 0; $i < $columns; $i++) {
             print '<td>' . $row[$i] . '</td>';
@@ -36,6 +43,8 @@ print "<br>";
         
         // used to highlight alternate rows
          $highlight = 1; 
+         
+         
     
     
     
