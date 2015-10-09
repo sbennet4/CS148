@@ -77,6 +77,16 @@
 <a href="assignment2.0/select.php">Assignment 2.0</a>
 
    </li>
+   
+   <li>Friday Assignment 1.0: 
+<a href="misc/friday.php">Assignment 2.0</a>
+
+   </li>
+   
+   <li>Assignment 3.0: 
+<a href="assignment3.0/join.php">Assignment 3.0</a>
+
+   </li>
  
 </ul>
     

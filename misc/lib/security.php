@@ -22,7 +22,7 @@ function securityCheck($path_parts, $yourURL, $form = false) {
       $whiteListPages[] = "q4.php";  $whiteListPages[] = "q5.php"; $whiteListPages[] = "q6.php";
        $whiteListPages[] = "q7.php"; $whiteListPages[] = "q8.php"; $whiteListPages[] = "q9.php";
         $whiteListPages[] = "q10.php";$whiteListPages[] = "q11.php";$whiteListPages[] = "q12.php";
-        
+        $whiteListPages[] = "friday.php";
      
     $whiteListPages[] = "select.php";
     $whiteListPages[] = "populate-table.php";
@@ -35,6 +35,7 @@ function securityCheck($path_parts, $yourURL, $form = false) {
     $whiteListFolders[] = "/education/cs148/assignment2.0";
     $whiteListFolders[] = "/develop/cs148/assignment2.0";
     $whiteListFolders[] = "/cs148develop/assignment2.0";
+    $whiteListFolders[] = "/cs148develop/misc";
 
     // Check for valid page name
     if (!in_array($path_parts['basename'], $whiteListPages)) {

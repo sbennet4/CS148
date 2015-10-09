@@ -490,7 +490,7 @@ INSERT INTO tblTeachers (fldLastName, fldFirstName, pmkNetId, fldSalary, fldPhon
 ('Laurent', 'Jennifer Suzanne', 'jlaurent', 245274, '6568863'),
 ('Leonard', 'Jonathan G.', 'jleonard', 51280, '6561771'),
 ('Hendley', 'Joyce Louise', 'jlhendle', 187201, '6564189'),
-('Horton', 'Jackie Lynn', 'jlh3orton', 108960, '6568985'),
+('Horton', 'Jackie Lynn', 'jlhorton', 108960, '6568985'),
 ('Li', 'Jianing ', 'jli27', 79781, '6568411'),
 ('Kaplan', 'Judith Leach', 'jlkaplan', 107286, '6566106'),
 ('Shea', 'Jeanne Laraine', 'jlshea', 126187, '6569901'),
