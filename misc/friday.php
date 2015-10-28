@@ -1,57 +1,68 @@
-<?php
 
+<?php
+include "top.php";
 //##############################################################################
 //
-// This page lists your tables and fields within your database. if you click on
-// a database name it will show you all the records for that table. 
+// This page lists the records based on the query given
 // 
-// 
-// This file is only for class purposes and should never be publicly live
+// i tend to print out each array to see what is inside it. this helps with my
+// understanding
+// if ($debug) {
+//    print "<p>Contents of the fields array<pre>";
+//    print_r($fields);
+//    print "</pre></p>";
+// }
 //##############################################################################
-include "top.php";
-$columns=8;
-      
-        //now print out each record  
-    // ######## for assignment 2 copy and change to display SQL statments ######
+if(isset($_GET['offset'])) {$offset = $_GET['offset'];
+}
+$limit = 10;
+//$offset = 999;
 
-//selects all columns from the students, sorted by last name then first name
-$query = 'SELECT * from tblStudents'
-        . ' ORDER BY fldLastName, fldFirstName LIMIT ?,?';
-//select * from tblStudents order by fldLastName, fldFirstName limit 10 offset 1000;
-
-echo $query; 
-print "<br>";
+$query = 'SELECT fldFirstName, fldLastName FROM tblTeachers LIMIT ' . $limit . ' OFFSET ' . $offset;
+$records = $thisDatabaseReader->select($query, "", 0, 0, 0, 0, false, false);
+// the array $records is both associative and indexed, column zero is associative
+// which you see in teh above print_r statement     
 
 
-    $results = $thisDatabaseReader->select($query, "", 0, 1, 0, 0, false, false);
- echo count ($results);
+
+$fields = array_keys($records[0]);
+$labels = array_filter($fields, "is_string");
+$columns = count($labels);
+print '<table>';
+print '<tr><th colspan="' . $columns . '">' . $query . '</th></tr>';
+// print out the column headings, note i always use a 3 letter prefix
+// and camel case like pmkCustomerId and fldFirstName
+print '<tr>';
+foreach ($labels as $label) {
+    print '<th>';
+    $camelCase = preg_split('/(?=[A-Z])/', substr($label, 3));
+    foreach ($camelCase as $one) {
+        print $one . " ";
+    }
+    print '</th>';
+}
+print '</tr>';
+//now print out each record
+foreach ($records as $record) {
+    print '<tr>';
+    for ($i = 0; $i < $columns; $i++) {
+        print '<td>'. $record[$i] . '</td>';
+    }
+    print '</tr>';
+}
+// all done
+print '</table>';
+
+if($offset != 999)
+{
+  $next = $offset + 10;
+print '<p> <a href = "https://sbennet4.w3.uvm.edu/cs148develop/misc/friday.php?offset=' . $next . '"> next </a> </p>';  
+}
    
-    
-          print "<table>";
-          
-      print "<tr><th>pmkStudentId</th><th>Last Name</th><th>First Name</th><th>Address</th><th>City</th><th>State</th><th>Zip</th><th>Gender</th></tr>";
-    
-
-       
- foreach ($results as $row) {
-    
-     print "<tr>";
-     for ($i = 0; $i < $columns; $i++) {
-            print '<td>' . $row[$i] . '</td>';
-        }
-        print "</tr>";
-        
-        // used to highlight alternate rows
-         $highlight = 1; 
-         
-         
-    
-    
-    
- }
- print "</table>";
-    // all done
-
-
+if($offset != 0)
+{
+$back = $offset - 10; 
+print '<p> <a href = "https://sbennet4.w3.uvm.edu/cs148develop/misc/friday.php?offset=' . $back . '"> back </a> </p>';
+}
 include "footer.php";
 ?>

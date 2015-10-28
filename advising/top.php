@@ -5,10 +5,10 @@ require_once('lib/custom-functions.php');
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>assignment 1.0</title>
+        <title>Assignmnet 2</title>
         <meta charset="utf-8">
         <meta name="Skomer Bennett-Clemmow" content="top page">
-        <meta name="description" content="assignement 1.0">
+        <meta name="description" content="advising">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +16,30 @@ require_once('lib/custom-functions.php');
         <script src="//html5shim.googlecode.com/sin/trunk/html5.js"></script>
         <![endif]-->
 
-        <link rel="stylesheet" href="css/base.css" type="text/css" media="screen">
+        <style type="text/css">
+
+            table{
+                border: medium #000080 solid;
+                border-collapse: collapse;
+                width: 90%;
+                margin: auto;
+                max-width: 600px;
+            }
+            tbody{height: 10em;
+                  overflow: auto;}
+            td, th {
+                border: thin #000080 solid;
+                border-collapse: collapse;
+            }
+
+            tr:nth-child(even) {
+                background-color: lightcyan;
+            }
+
+            tr:nth-child(odd){
+                background-color: whitesmoke;
+            }
+        </style>
 
         <?php
         $debug = false;
@@ -127,7 +150,7 @@ require_once('lib/custom-functions.php');
 
     <!-- **********************     Body section      ********************** -->
     <?php
-    print '<body id="' . $path_parts['filename'] . '">';
+   // print '<body id="' . $path_parts['filename'] . '">';
     include "header.php";
     include "nav.php";
     ?>

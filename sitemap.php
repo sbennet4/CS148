@@ -79,12 +79,17 @@
    </li>
    
    <li>Friday Assignment 1.0: 
-<a href="misc/friday.php">Assignment 2.0</a>
+       <a href="misc/friday.php?offset=10">Assignment 2.0</a>
+
+   </li>
+
+   <li>Assignment 3.0: 
+<a href="assignment3.0/join.php">Assignment 3.0</a>
 
    </li>
    
-   <li>Assignment 3.0: 
-<a href="assignment3.0/join.php">Assignment 3.0</a>
+   <li>Advising: 
+<a href="advising/index.php">Advising</a>
 
    </li>
  
