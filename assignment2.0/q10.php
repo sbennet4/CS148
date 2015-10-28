@@ -17,7 +17,8 @@ $columns=2;
 $query = 'SELECT COUNT(fldNumStudents), fldBuilding FROM tblSections WHERE fldDays LIKE "%f%" GROUP BY fldBuilding ORDER BY COUNT(fldNumStudents) DESC';
       echo $query; 
             print "<br>";
-            print "<p>On Friday Kalkin has 43 where as on the Wednesday it has 51, because we are able to bring up any selection of data from the table we are able to verify the results.   </p>";
+            print "<p>On F"
+            . "riday Kalkin has 43 where as on the Wednesday it has 51, because we are able to bring up any selection of data from the table we are able to verify the results.   </p>";
     $results = $thisDatabaseReader->select($query, "", 1, 1, 2, 0, false, false);
 echo count ($results);
     
